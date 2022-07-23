@@ -1,0 +1,23 @@
+{
+  "name": "webmarket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cisuno7/Joker-Project.git"
+  },
+  "author": "gabriel pontes e gabriel torres",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cisuno7/Joker-Project/issues"
+  },
+  "homepage": "https://github.com/cisuno7/Joker-Project#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
+  }
+}
