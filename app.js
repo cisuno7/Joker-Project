@@ -12,8 +12,8 @@ app.set(express.static("public"));
 app.get("/", (req, res) => {
   res.render("login");
 });
-app.get("/Esquecirsenha", (req, res) => {
-  res.render("Esquecirsenha");
+app.get("/Produtos", (req, res) => {
+  res.render("Produtos");
 });
 
 app.listen(PORT, () => {
