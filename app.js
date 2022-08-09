@@ -15,6 +15,9 @@ app.get("/", (req, res) => {
 app.get("/Produtos", (req, res) => {
   res.render("Produtos");
 });
+app.get("/Carrinho", (req, res) => {
+  res.render("Carrinho");
+});
 
 app.listen(PORT, () => {
   console.log("Servidor iniciado em http://localhost:" + PORT);

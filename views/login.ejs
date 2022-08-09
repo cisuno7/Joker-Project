@@ -4,20 +4,16 @@
   <form>
     <h1>Login</h1>
     <div class="row">
-      <input type="email" placeholder="Email" />
-      <span>@hotmail.com</span>
+      <input type="email" placeholder="Email" id="email" />
     </div>
     <div class="row">
-      <input type="password" class="senha" placeholder="Senha" />
+      <input type="password" class="senha" placeholder="Senha" id="senha1" />
       <img
         src="https://icon-library.com/images/icon-eyes/icon-eyes-12.jpg"
         class="btn"
       />
     </div>
-    <a href="Produtos.ejs">
-      <input type="button" value="Enviar" />
-    </a>
-   
+    <input type="button" value="Enviar" id="enviar" onclick="Login()" />
   </form>
 </body>
 <style>
@@ -104,5 +100,18 @@
       btn.src = "https://icon-library.com/images/icon-eyes/icon-eyes-12.jpg";
     }
   };
+
+  function Login() {
+    let senha1 = document.getElementById("senha1");
+    let email = document.getElementById("email");
+
+    if (email.value == null || email.length == 0) {
+      alert("Campo de email preenchido incorretamente");
+    } else if (senha1.value == null || senha1.length == 0) {
+      alert("Campo de senha preenchido incorretamente");
+    } else {
+      return (location.href = "Produtos");
+    }
+  }
 </script>
 %> <%- include('partials/footer.ejs'); %>
