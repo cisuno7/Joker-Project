@@ -1,21 +1,4 @@
 <%- include('partials/header.ejs'); %>
-
-<body>
-  <form>
-    <h1>Login</h1>
-    <div class="row">
-      <input type="email" placeholder="Email" id="email" />
-    </div>
-    <div class="row">
-      <input type="password" class="senha" placeholder="Senha" id="senha1" />
-      <img
-        src="https://icon-library.com/images/icon-eyes/icon-eyes-12.jpg"
-        class="btn"
-      />
-    </div>
-    <input type="button" value="Enviar" id="enviar" onclick="Login()" />
-  </form>
-</body>
 <style>
   * {
     margin: 0;
@@ -40,6 +23,7 @@
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align:center;
   }
   form .row {
     position: relative;
@@ -80,12 +64,37 @@
   form h1:before {
     content: "";
     position: absolute;
-    width: 40px;
+    width: 40px;  
     height: 4px;
     bottom: 2px;
     background: #16b;
   }
+  #Registro{
+    text-align: center;
+    margin-top:20px;
+  }
 </style>
+<body>
+  <form>
+    <h1>Login</h1>
+    <div class="row">
+      <input type="email" placeholder="Email" id="email" />
+    </div>
+    <div class="row">
+      <input type="password" class="senha" placeholder="Senha" id="senha1" />
+      <img
+        src="https://icon-library.com/images/icon-eyes/icon-eyes-12.jpg"
+        class="btn"
+      />
+    </div>
+    <input type="button" value="Entrar" id="entrar" onclick="Login()" />
+    <div id="Registro">
+      <a href="registro">Registrar-se</a>
+    </br>
+      <a href="esqueci-minha-senha">Esqueci minha senha</a>
+    </div>
+  </form>
+</body>
 <script>
   const senha = document.querySelector(".senha");
   const btn = document.querySelector(".btn");

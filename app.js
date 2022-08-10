@@ -10,13 +10,23 @@ app.set(express.static("public"));
 
 // Rotas
 app.get("/", (req, res) => {
-  res.render("login");
+  res.render("Login");
 });
+
 app.get("/Produtos", (req, res) => {
   res.render("Produtos");
 });
+
 app.get("/Carrinho", (req, res) => {
   res.render("Carrinho");
+});
+
+app.get("/Registro", (req, res) => {
+  res.render("Registro");
+});
+
+app.get("/esqueci-minha-senha", (req, res) => {
+  res.render("Esqueci-minha-Senha");
 });
 
 app.listen(PORT, () => {
