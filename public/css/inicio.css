@@ -1,0 +1,14 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+.background{
+    background-color: pink;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(#EBF0F0,#FFFFFF);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+

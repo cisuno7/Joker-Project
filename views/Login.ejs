@@ -1,79 +1,5 @@
 <%- include('partials/header.ejs'); %>
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    box-sizing: border-box;
-    outline: none;
-  }
-
-  body {
-    width: 100%;
-    height: 100vh;
-    background: #16b;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  form {
-    width: 400px;
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    text-align:center;
-  }
-  form .row {
-    position: relative;
-    margin: 20px 0;
-  }
-  form input {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #777;
-    border-radius: 5px;
-    padding-right: 110px;
-  }
-  form input[type="button"] {
-    background: #16b;
-    color: #fff;
-    font-size: 18px;
-    border: none;
-    cursor: pointer;
-    padding-right: 0px;
-  }
-  form .row span,
-  form .row img {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    color: #555;
-    transform: translateY(-50%);
-  }
-  form .row img {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-  }
-  form h1 {
-    color: #16b;
-    position: relative;
-  }
-  form h1:before {
-    content: "";
-    position: absolute;
-    width: 40px;  
-    height: 4px;
-    bottom: 2px;
-    background: #16b;
-  }
-  #Registro{
-    text-align: center;
-    margin-top:20px;
-  }
-</style>
+<link rel="stylesheet" type="text/css" href="css/login.css"><body>
 <body>
   <form>
     <h1>Login</h1>
@@ -95,6 +21,7 @@
     </div>
   </form>
 </body>
+
 <script>
   const senha = document.querySelector(".senha");
   const btn = document.querySelector(".btn");
@@ -119,7 +46,7 @@
     } else if (senha1.value == null || senha1.length == 0) {
       alert("Campo de senha preenchido incorretamente");
     } else {
-      return (location.href = "Produtos");
+      return (location.href = "Inicio");
     }
   }
 </script>

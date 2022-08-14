@@ -1,16 +1,30 @@
-const express = require("express");
+const express = require('express');
 const app = express();
+const path = require('path');
 const PORT = 8080;
+const axios = require('axios');
 
 //View Engine
 app.set("view engine", "ejs");
 
 //Arquivos Estáticos
-app.set(express.static("public"));
+app.use(express.static(path.join(__dirname, '/public')));
 
 // Rotas
 app.get("/", (req, res) => {
   res.render("Login");
+});
+
+app.get("/Inicio", (req, res) => {
+  res.render("Inicio");
+});
+
+app.get("/Perfil", (req, res) => {
+  res.render("Perfil");
+});
+
+app.get("/Configuracoes", (req, res) => {
+  res.render("Configurações");
 });
 
 app.get("/Produtos", (req, res) => {
@@ -33,13 +47,16 @@ app.listen(PORT, () => {
   console.log("Servidor iniciado em http://localhost:" + PORT);
 });
 
+
+
+
 //Data Base
 (async () => {
   const database = require("./database/database");
 
   try {
     const resultado = await database.sync();
-    console.log(resultado);
+    console.log('SQLite iniciado com sucesso!');
   } catch (error) {
     console.log(error);
   }
