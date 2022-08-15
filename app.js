@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const PORT = 8080;
 const axios = require('axios');
+const { cp } = require('fs');
 
 //View Engine
 app.set("view engine", "ejs");
@@ -27,8 +28,16 @@ app.get("/Configuracoes", (req, res) => {
   res.render("Configurações");
 });
 
-app.get("/Produtos", (req, res) => {
-  res.render("Produtos");
+app.get("/Produtos", async (req, res) => {
+  
+  const produtos = await axios.get('http://fixsystem.ddns.net:8096/rest/produtos');
+
+  console.log(produtos);
+
+  res.render("Produtos",{
+    produtos: produtos
+  });
+
 });
 
 app.get("/Carrinho", (req, res) => {
@@ -47,9 +56,6 @@ app.listen(PORT, () => {
   console.log("Servidor iniciado em http://localhost:" + PORT);
 });
 
-
-
-
 //Data Base
 (async () => {
   const database = require("./database/database");
@@ -61,3 +67,4 @@ app.listen(PORT, () => {
     console.log(error);
   }
 })();
+

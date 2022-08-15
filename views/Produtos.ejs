@@ -1,8 +1,20 @@
 <%- include('partials/header.ejs'); %>
+<link rel="stylesheet" href="/css/produtos.css">
   <body>
     <%- include('partials/navbar.ejs'); %>
     <section class="container">
       <h1>Produtos</h1>
+        <% Array.from(produtos.data).forEach(produto => { %>
+            <div class="card">
+              <img src="<%= produto.imagens[1].url%>" style="width:100%">
+              <h1><%= produto.descricao %></h1>
+              <h1></h1>
+              <p class="price"><%= produto.preco_venda %></p>
+              <p><%= produto.um %></p>
+              <p><button>Adicionar ao Carrinho</button></p>
+            </div> 
+        <% }) %>
+      
     </section>
   </body>
 <%- include('partials/footer.ejs'); %>
