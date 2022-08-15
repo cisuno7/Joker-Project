@@ -4,17 +4,18 @@
     <%- include('partials/navbar.ejs'); %>
     <section class="container">
       <h1>Produtos</h1>
+      <hr>
+      <div id="ListaProdutos">
         <% Array.from(produtos.data).forEach(produto => { %>
-            <div class="card">
-              <img src="<%= produto.imagens[1].url%>" style="width:100%">
-              <h1><%= produto.descricao %></h1>
-              <h1></h1>
-              <p class="price"><%= produto.preco_venda %></p>
-              <p><%= produto.um %></p>
-              <p><button>Adicionar ao Carrinho</button></p>
-            </div> 
-        <% }) %>
-      
+          <div class="card">
+            <img src="<%= produto.imagens[1].url%>">
+            <p class="cardTitulo"><%= produto.descricao %></p>
+            <p class="price"> R$<%= produto.preco_venda %></p>
+            <p><%= produto.um %></p>
+            <p><button>Adicionar ao carrinho</button></p>
+          </div> 
+      <% }) %>
+      </div>
     </section>
   </body>
 <%- include('partials/footer.ejs'); %>

@@ -1,28 +1,45 @@
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
+    max-width: 200px;
     text-align: center;
-    font-family: arial;
+    margin: 10px;
+
+  }
+
+  .cardTitulo{
+    font-size: 100%;
+    font-weight: 500;
+    margin:auto;
+    text-align: center;
+    justify-self: center;
   }
   
   .price {
+    height: auto;
     color: grey;
-    font-size: 22px;
+    font-size: 20px;
   }
   
   .card button {
     border: none;
     outline: 0;
-    padding: 12px;
+    padding: 8px;
+    margin: 0;
     color: white;
     background-color: #16b;
     text-align: center;
     cursor: pointer;
     width: 100%;
-    font-size: 18px;
+    font-size: 14px;
   }
   
   .card button:hover {
     opacity: 0.7;
   }
+
+#ListaProdutos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

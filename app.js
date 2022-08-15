@@ -32,7 +32,7 @@ app.get("/Produtos", async (req, res) => {
   
   const produtos = await axios.get('http://fixsystem.ddns.net:8096/rest/produtos');
 
-  console.log(produtos);
+  // console.log(produtos);
 
   res.render("Produtos",{
     produtos: produtos
