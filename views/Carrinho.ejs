@@ -4,6 +4,16 @@
     <section class="container">
       <h1>Meu Carrinho</h1>
     </section>
+    <div id="ListaProdutos">
+      <% Array.from(produtos.data).forEach(produto => { %>
+        <div class="card">
+          <img src="<%= produto.imagens[1].url%>">
+          <p class="cardTitulo"><%= produto.descricao %></p>
+          <p class="price"> R$<%= produto.preco_venda %></p>
+          <p><%= produto.um %></p>
+            <p><button>Comprar</button></p>
+          </a>
+        </div> 
   </body>
 <%- include('partials/footer.ejs'); %>
 

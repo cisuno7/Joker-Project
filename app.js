@@ -41,6 +41,7 @@ app.get("/Produtos", async (req, res) => {
 });
 
 app.get("/Carrinho", (req, res) => {
+  const produtos = await axios.get('http://fixsystem.ddns.net:8096/rest/produtos');
   res.render("Carrinho");
 });
 
