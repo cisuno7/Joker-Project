@@ -4,6 +4,7 @@ const path = require('path');
 const PORT = 8080;
 const axios = require('axios');
 const { cp } = require('fs');
+let produtos = [];
 
 //View Engine
 app.set("view engine", "ejs");
@@ -28,20 +29,13 @@ app.get("/Configuracoes", (req, res) => {
   res.render("Configurações");
 });
 
-app.get("/Produtos", async (req, res) => {
-  
-  const produtos = await axios.get('http://fixsystem.ddns.net:8096/rest/produtos');
-
-  // console.log(produtos);
-
-  res.render("Produtos",{
+app.get("/Produtos", async(req, res) => {
+  res.render("Produtos", {
     produtos: produtos
   });
-
 });
 
 app.get("/Carrinho", (req, res) => {
-  const produtos = await axios.get('http://fixsystem.ddns.net:8096/rest/produtos');
   res.render("Carrinho");
 });
 
@@ -68,4 +62,18 @@ app.listen(PORT, () => {
     console.log(error);
   }
 })();
+
+//Consumo de API
+(async () => {
+  try {
+    produtos = await axios.get('http://fixsystem.ddns.net:8096/rest/produtos');
+    
+    console.log('Retorno de API efetuado com sucesso!');
+
+    module.exports = produtos;
+  } catch (error) {
+    console.log(error);
+  }
+})();
+
 

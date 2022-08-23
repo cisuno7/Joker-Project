@@ -1,23 +1,19 @@
 <%- include('partials/header.ejs'); %>
+<% require()%>
 <link rel="stylesheet" href="/css/produtos.css">
   <body>
     <%- include('partials/navbar.ejs'); %>
     <section class="container">
-      <h1>Produtos</h1>
-      <hr>
+      <h2>Produtos</h2>
       <div id="ListaProdutos">
-        <% Array.from(produtos.data).forEach(produto => { %>
-          <div class="card">
-            <img src="<%= produto.imagens[1].url%>">
-            <p class="cardTitulo"><%= produto.descricao %></p>
-            <p class="price"> R$<%= produto.preco_venda %></p>
-            <p><%= produto.um %></p>
-            <a href="Carrinho">
-              <p><button>Adicionar ao carrinho</button></p>
-            </a>
-          </div> 
-      <% }) %>
+        <%= produtos %>
       </div>
     </section>
   </body>
+
+  <script>
+
+      console.log(produtos);
+
+  </script>
 <%- include('partials/footer.ejs'); %>
